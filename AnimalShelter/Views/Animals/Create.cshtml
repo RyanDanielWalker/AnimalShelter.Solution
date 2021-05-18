@@ -1,0 +1,27 @@
+@using System.Collections.Generic;
+@model AnimalShelter.Models.Animal;
+
+<h4>Add a new Animal</h4>
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name)
+  @Html.LabelFor(model => model.Type)
+  @Html.DropDownListFor(model => model.Type, new List<SelectListItem>
+{
+new SelectListItem { Text = "Cat", Value = "Cat"},
+new SelectListItem { Text = "Dog", Value = "Dog"},
+new SelectListItem { Text = "Bunny", Value = "Bunny"},
+new SelectListItem { Text = "Bird", Value = "Bird"}
+}, "Type")
+  @Html.LabelFor(model => model.Breed)
+  @Html.TextBoxFor(model => model.Breed)
+  @Html.LabelFor(model => model.Gender, "Male")
+  @Html.RadioButtonFor(model => model.Gender, "Male")
+  @Html.LabelFor(model => model.Gender, "Female")
+  @Html.RadioButtonFor(model => model.Gender, "Female")
+  @Html.LabelFor(model => model.DateOfAdmittance)
+  @Html.EditorFor(model => model.DateOfAdmittance)
+  <input type="submit" value="Add new animal" />
+
+}

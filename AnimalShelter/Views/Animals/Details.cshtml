@@ -1,0 +1,8 @@
+@model AnimalShelter.Models.Animal
+
+<h1>Details for @Html.DisplayFor(model => model.Name)</h1>
+
+<h3>Breed: @Html.DisplayFor(model => model.Breed)</h3>
+<h3>Type: @Html.DisplayFor(model => model.Type)</h3>
+<h3>Gender: @Html.DisplayFor(model => model.Gender)</h3>
+<h3>Date of Admit: @Model.DateOfAdmittance.ToString("MMM dd, yyyy")</h3>
